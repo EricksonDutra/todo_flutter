@@ -1,11 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:todo_flutter/models/todo.dart';
 
 class TodoRepo {
   final dio = Dio();
   final Map<String, String> headers = {
-    "X-Parse-Application-Id": "6WgrSD7fVYFQNpycMYmF65BlfcTF1yTU9KNQVNzh",
-    "X-Parse-REST-API-Key": "VKWEF9xDD61M3npLg7oIx6aNY2RgIs3P0gvFtouK",
+    'X-Parse-Application-Id': dotenv.env['X-Parse-Application-Id'] as String,
+    'X-Parse-REST-API-Key': dotenv.env['X-Parse-REST-API-Key'] as String,
     "Content-Type": "application/json"
   };
   final urlBase = 'https://parseapi.back4app.com/classes';
